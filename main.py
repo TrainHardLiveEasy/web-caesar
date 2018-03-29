@@ -9,41 +9,44 @@ form = """
 	<html>
 		<head>
             <style>
-                form {
+                form {{
                     background-color: #eee;
                     padding: 20px;
                     margin: 0 auto;
                     width:540px;
                     font: 16px sana-serif;
                     border-radius: 10px;
-                }
+                }}
                 
-                textarea {
+                textarea {{
                     margin: 10px 0;
                     width: 540px;
                     height: 120px;
-                }
+                }}
             </style>
         </head>
 
         <body>
-            <form action="" method="POST" />
-                <label for = "rot"> </label>
-                <input type = "text" name = "rot" value="0"/>
-                <textarea name = "text"> </textarea>
+            <form method="POST">
+                <label for = "rot"> Rotate characters by: </label>
+                <input type = "text" name = "rot" value="0" id="rot" />
+                <textarea type = "text" name="text" id="text"> {0} </textarea>
                 <input type = "submit" value="Submit" />
             </form>
         </body>
 
     </html>            
 """
+
 @app.route("/") #decorator that creates a mapping b/w the path('/' and the function we're about to define)
 def index():    #INDEX; a function with zero variables
-    return form
+    return form.format(...)
 
 @app.route("/", methods=["POST"])
 def encrypt():
     rot = request.form['rot']
     text = request.form['text']
+    characters_encrypted = '<h1>'rotate_string(text,int(rot))'<h1>'
+    return form.format(...)
 
 app.run()   #passes control to Flask
