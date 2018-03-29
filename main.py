@@ -40,13 +40,13 @@ form = """
 
 @app.route("/") #decorator that creates a mapping b/w the path('/' and the function we're about to define)
 def index():    #INDEX; a function with zero variables
-    return form.format(...)
+    return form.format("")
 
 @app.route("/", methods=["POST"])
 def encrypt():
     rot = request.form['rot']
     text = request.form['text']
-    characters_encrypted = '<h1>'rotate_string(text,int(rot))'<h1>'
-    return form.format(...)
+    characters_encrypted = rotate_string(text,int(rot))
+    return form.format(characters_encrypted)
 
 app.run()   #passes control to Flask
