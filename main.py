@@ -1,4 +1,4 @@
-from flask import Flask,request #imports Flask class from flask module
+from flask import Flask, request #imports Flask class from flask module
 from caesar import rotate_string
 
 app = Flask(__name__) #app will be object created by the constructor Flask. _name_ is a varibale controlled by Python that tell code what module it's in.
@@ -46,7 +46,7 @@ def index():    #INDEX; a function with zero variables
 def encrypt():
     rot = request.form['rot']
     text = request.form['text']
-    characters_encrypted = rotate_string(text,int(rot))
+    characters_encrypted = rotate_string (text, int(rot))
     return form.format(characters_encrypted)
 
 app.run()   #passes control to Flask
