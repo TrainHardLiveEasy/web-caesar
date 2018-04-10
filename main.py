@@ -30,7 +30,7 @@ form = """
             <form method="POST">
                 <label for = "rot"> Rotate characters by: </label>
                 <input type = "text" name = "rot" value="0" id="rot" />
-                <textarea type = "text" name="text" id="text"> {0} </textarea>
+                <textarea type = "text" name="text" id="text">{0}</textarea>
                 <input type = "submit" value="Submit" />
             </form>
         </body>
